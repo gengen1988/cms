@@ -11,12 +11,18 @@ define(function () {
     '/article/:id': {
       templateUrl: 'views/article.html',
       controller: 'ArticleController',
-      controllerAs: 'article'
+      controllerAs: 'article',
+      reloadOnSearch: true
     },
-    '/admin/article/:id': {
+    '/admin/file/:id': {
       templateUrl: 'views/admin/article.html',
       controller: 'EditorController',
       controllerAs: 'editor'
+    },
+    '/admin/folder/:id': {
+      templateUrl: 'views/admin/manage.html',
+      controller: 'ManagerController',
+      controllerAs: 'manager'
     }
   }
 });

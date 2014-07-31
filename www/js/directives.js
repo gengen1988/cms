@@ -38,5 +38,12 @@ define([
     };
   });
 
+  directives.directive('adminHeader', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'partials/admin/header.html'
+    }
+  });
+
   return directives;
 });

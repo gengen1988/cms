@@ -1,0 +1,35 @@
+<admin-header></admin-header>
+
+<div class="container">
+
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+
+  <div class="panel panel-default">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>修改时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in manager.items">
+          <td>
+            <span class="fa" ng-class="{
+              'fa-folder': item.type === 'folder',
+              'fa-file-text-o': item.type === 'file',
+              'fa-file-o': item.type === 'page'
+            }"></span>
+            <span class="name">{{item.name}}</span>
+          </td>
+          <td>{{'asdf'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -23,22 +23,57 @@ define([
     this.articles = articles;
   }]);
 
-  controllers.controller('ArticleController', ['$routeParams', function ($routeParams) {
+  controllers.controller('ArticleController', ['$routeParams', '$scope', function ($routeParams) {
     var id = $routeParams.id;
     this.title = '集团公司李慧镝副总裁莅临我院宣布主要负责人调整';
     this.updateDate = Date.now();
-    this.content = 'storage/123.html'
+
+    this.content = 'storage/123.html?cache=' + Date.now();
   }]);
 
-  controllers.controller('EditorController', [function () {
-    tinymce.init({
-      selector: '.editor',
-      content_css: '/less/editor.css',
+  controllers.controller('EditorController', ['$http', '$routeParams', '$scope', function ($http, $routeParams, $scope) {
+    var self = this;
+
+    var path = 'storage/' + $routeParams.id + '.html';
+
+    this.options = {
+      content_css: '/bower_components/bootstrap/dist/css/bootstrap.css',
       plugins: 'code image preview autoresize',
       menubar: false,
       statusbar: false,
       toolbar: 'undo redo | code preview | bold italic underline | alignleft aligncenter alignright | image'
-    });
+    };
+
+    this.save = function () {
+      $http.put(path, {
+        html: self.html
+      }).success(function (result) {
+        console.log($scope);
+        history.back();
+      });
+    };
+
+    this.load = function () {
+      $http.get(path).success(function (result) {
+        self.html = result;
+      });
+    };
+
+    this.load();
+  }]);
+
+  controllers.controller('ManagerController', ['$routeParams', '$http', function ($routeParams, $http) {
+    this.load = function () {
+      $http.get('test', {
+        params: {
+          id: $routeParams.id  
+        }
+      }).success(function (result) {
+        console.log(result);
+      });
+    };
+
+    this.load();
   }]);
 
   return controllers;
