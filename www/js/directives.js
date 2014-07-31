@@ -3,10 +3,12 @@ define([
 ], function (angular) {
   var directives = angular.module('app.directives', []);
 
-  directives.directive('pagination', function () {
+  directives.directive('appPagination', function () {
     return {
       restrict: 'E',
-      templateUrl: 'partials/pagination.html'
+      templateUrl: 'partials/pagination.html',
+      controller: 'PaginationController',
+      controllerAs: 'pagination'
     }
   });
 

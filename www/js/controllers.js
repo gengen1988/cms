@@ -4,6 +4,8 @@ define([
 ], function (angular, tinymce) {
   var controllers = angular.module('app.controllers', []);
 
+  var PAGE_COUNT = 5;
+
   var articles = [{
     title: '集团公司李慧镝副总裁莅临我院宣布主要负责人调整',
     link: 'article/123',
@@ -22,6 +24,8 @@ define([
     var self = this;
     var url = '/api/sections/' + $routeParams.id;
 
+    var pageNumber = this.pageNumber = $routeParams.page || 0;
+
     this.load = function () {
       $http.get(url).success(function (result) {
         console.log(result);
@@ -29,7 +33,8 @@ define([
       });
       $http.get(url + '/articles', {
         params: {
-          //'filter[limit]': 3
+          'filter[skip]': pageNumber * PAGE_COUNT,
+          'filter[limit]': PAGE_COUNT
         }
       }).success(function (result) {
         console.log(result);
@@ -55,6 +60,28 @@ define([
 
     this.load();
   }]);
+
+  controllers.controller('PaginationController', ['$location', '$http', '$routeParams', function ($location, $http, $routeParams) {
+    var self = this;
+    this.path = $location.path();
+    this.currentPage = $routeParams.page || 0;
+
+    this.load = function () {
+      $http.get('/api/articles/count?where[sectionId]=' + $routeParams.id).success(function (result) {
+        console.log(result.count / PAGE_COUNT);
+        self.count = Math.ceil(result.count / PAGE_COUNT);
+        self.pages = [];
+        for (var i = 0; i < self.count; ++i) {
+          self.pages.push({
+            number: i
+          });
+        }
+      });
+    };
+
+    this.load();
+  }]);
+
 
   controllers.controller('ArticleController', ['$http', '$routeParams', function ($http, $routeParams) {
     var id = this.id = $routeParams.id;
