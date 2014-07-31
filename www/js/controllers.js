@@ -18,17 +18,60 @@ define([
     updateDate: Date.now()
   }];
 
-  controllers.controller('SectionController', [function () {
-    this.title = '公司新闻';
-    this.articles = articles;
+  controllers.controller('SectionController', ['$http', '$routeParams', function ($http, $routeParams) {
+    var self = this;
+    var url = '/api/sections/' + $routeParams.id;
+
+    this.load = function () {
+      $http.get(url).success(function (result) {
+        console.log(result);
+        self.title = result.name;
+      });
+      $http.get(url + '/articles', {
+        params: {
+          //'filter[limit]': 3
+        }
+      }).success(function (result) {
+        console.log(result);
+        self.articles = result;
+      });
+    };
+
+    this.create = function () {
+      $http.put('/api/articles', {
+        name: '123',
+        sectionId: $routeParams.id
+      }).success(function (result) {
+        self.articles.push(result);
+      });
+    };
+
+    this.remove = function (id, index) {
+      $http.delete('/api/articles/' + id).success(function (result) {
+        console.log(result);
+        self.articles.splice(index, 1);
+      });
+    };
+
+    this.load();
   }]);
 
-  controllers.controller('ArticleController', ['$routeParams', '$scope', function ($routeParams) {
+  controllers.controller('ArticleController', ['$http', '$routeParams', function ($http, $routeParams) {
     var id = $routeParams.id;
-    this.title = '集团公司李慧镝副总裁莅临我院宣布主要负责人调整';
+    var self = this;
     this.updateDate = Date.now();
 
-    this.content = 'storage/123.html?cache=' + Date.now();
+    this.content = 'storage/' + id + '.html?cache=' + Date.now();
+
+    console.log(this.content);
+
+    this.load = function () {
+      $http.get('/api/articles/' + $routeParams.id).success(function (result) {
+        self.name = result.name;
+      });
+    };
+
+    this.load();
   }]);
 
   controllers.controller('EditorController', ['$http', '$routeParams', '$scope', function ($http, $routeParams, $scope) {
@@ -66,7 +109,7 @@ define([
     this.load = function () {
       $http.get('test', {
         params: {
-          id: $routeParams.id  
+          id: $routeParams.id
         }
       }).success(function (result) {
         console.log(result);

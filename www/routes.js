@@ -3,12 +3,12 @@ define(function () {
     '/': {
       templateUrl: 'views/root.html'
     },
-    '/products': {
-      templateUrl: 'views/products.html',
+    '/sections/:id': {
+      templateUrl: 'views/section.html',
       controller: 'SectionController',
       controllerAs: 'section'
     },
-    '/article/:id': {
+    '/articles/:id': {
       templateUrl: 'views/article.html',
       controller: 'ArticleController',
       controllerAs: 'article',

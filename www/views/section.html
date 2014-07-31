@@ -6,12 +6,14 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4>{{section.title}}</h4>
+      <button ng-click="section.create()" class="btn btn-primary">新增</button>
     </div>
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="article in section.articles">
-        <a ng-href="{{article.link}}">
-          <span>{{article.title}}</span>
+        <a ng-href="articles/{{article.id}}">
+          <span>{{article.name}}</span>
         </a>
+        <button ng-click="section.remove(article.id, $index)" class="btn btn-danger">删除</button>
         <span class="text-info pull-right">{{article.updateDate | date: 'yyyy-M-d'}}</span>
       </li>
     </ul>
