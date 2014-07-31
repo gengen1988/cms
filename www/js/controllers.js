@@ -57,7 +57,7 @@ define([
   }]);
 
   controllers.controller('ArticleController', ['$http', '$routeParams', function ($http, $routeParams) {
-    var id = $routeParams.id;
+    var id = this.id = $routeParams.id;
     var self = this;
     this.updateDate = Date.now();
 
@@ -88,6 +88,9 @@ define([
     };
 
     this.save = function () {
+      $http.put('/api/articles/' + $routeParams.id, {
+        name: self.name
+      });
       $http.put(path, {
         html: self.html
       }).success(function (result) {
@@ -97,6 +100,9 @@ define([
     };
 
     this.load = function () {
+      $http.get('/api/articles/' + $routeParams.id).success(function (result) {
+        self.name = result.name;
+      });
       $http.get(path).success(function (result) {
         self.html = result;
       });

@@ -14,7 +14,7 @@ define(function () {
       controllerAs: 'article',
       reloadOnSearch: true
     },
-    '/admin/file/:id': {
+    '/admin/articles/:id': {
       templateUrl: 'views/admin/article.html',
       controller: 'EditorController',
       controllerAs: 'editor'

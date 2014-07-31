@@ -2,7 +2,7 @@ var fs = require('fs');
 var app = require('./lib/app');
 var storage = require('./lib/storage');
 
-app.listen(1338, function () {
+storage.listen(1338, function () {
   console.log('storage started');
 });
 
