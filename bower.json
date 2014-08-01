@@ -1,0 +1,28 @@
+{
+  "name": "cms",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gengen1988/cms",
+  "authors": [
+    "Gen Liu <gerald_721@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.2.21",
+    "angular-sanitize": "~1.2.21",
+    "angular-ui-tinymce": "~0.0.5",
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.21",
+    "fontawesome": "~4.1.0",
+    "jquery": "1",
+    "requirejs": "~2.1.14",
+    "less": "~1.7.4",
+    "tinymce": "~4.1.2"
+  }
+}
