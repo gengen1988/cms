@@ -1,10 +1,14 @@
-<div class="container">
+<div ng-controller="UserController" class="container">
   <div class="logo pull-left">
     <a href=".">
       <img ng-src="http://www.cmdi.chinamobile.com/images/Logo.jpg">
     </a>
   </div>
   <div class="user-control pull-right">
+    <button ng-show="hasLogin" ng-click="signOut()" class="btn btn-default">signout</button>
+    <a href="user">profile</a>
+    <a href="user/signup">signup</a>
+    <a href="user/signin">signin</a>
     <a href="admin">admin</a>
   </div>
 </div>

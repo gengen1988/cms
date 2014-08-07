@@ -1,5 +1,5 @@
 define([
-  '../app-controllers'
+  'js/app-controllers'
 ], function (controllers) {
 
   controllers.controller('LandingCtrl', ['LandingPage', '$scope', function (LandingPage, $scope) {

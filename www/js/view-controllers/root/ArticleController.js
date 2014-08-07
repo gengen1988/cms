@@ -1,5 +1,5 @@
 define([
-  '../app-controllers'
+  'js/app-controllers'
 ], function (controllers) {
 
   controllers.controller('ArticleController', ['$http', '$routeParams', function ($http, $routeParams) {
@@ -19,5 +19,5 @@ define([
 
     this.load();
   }]);
-  
+
 });

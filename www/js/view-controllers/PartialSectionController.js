@@ -1,9 +1,8 @@
 define([
-  '../app-controllers'
+  'js/app-controllers'
 ], function (controllers) {
-
   controllers.controller('PartialSectionCtrl', ['Section', 'Article', '$scope', function (Section, Article, $scope) {
-
+    
     $scope.$watch('sectionId', function (val, origin) {
       if (!val) return;
       $scope.load(val);
@@ -30,5 +29,4 @@ define([
     };
 
   }]);
-
 });

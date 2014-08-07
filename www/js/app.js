@@ -3,9 +3,11 @@ define([
   './view-controllers/index',
   './directives'
 ], function (etframework, controllers) {
-  return angular.module('app', [
+  var app = angular.module('app', [
     etframework.name,
     controllers.name,
     'app.directives'
   ]);
+
+  return app;
 });

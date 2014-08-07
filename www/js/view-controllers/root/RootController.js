@@ -1,5 +1,5 @@
 define([
-  '../app-controllers'
+  'js/app-controllers'
 ], function (controllers) {
   controllers.controller('RootCtrl', ['LandingPage', '$scope', function (LandingPage, $scope) {
 
@@ -14,6 +14,6 @@ define([
     };
 
     $scope.load();
-    
+
   }]);
 });

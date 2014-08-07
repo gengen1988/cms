@@ -1,5 +1,5 @@
 define([
-  '../app-controllers'
+  'js/app-controllers'
 ], function (controllers) {
   console.log('load nav admin crtl');
   controllers.controller('NavAdminCtrl', [

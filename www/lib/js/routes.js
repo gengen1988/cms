@@ -1,7 +1,6 @@
 define([
   'lib/js/etframework',
-  'routes'
-
+  'routes/routes'
 ], function (etframework, routes) {
   etframework.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true).hashPrefix('!');

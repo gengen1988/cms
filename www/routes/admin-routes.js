@@ -1,24 +1,5 @@
-define(function () {
+define([], function () {
   return {
-    '/': {
-      templateUrl: 'views/root.html',
-      controller: 'RootCtrl'
-    },
-    '/test': {
-      templateUrl: 'views/test.html',
-      controller: 'PaginationDemoCtrl'
-    },
-    '/sections/:id': {
-      templateUrl: 'views/section.html',
-      controller: 'SectionController',
-      controllerAs: 'section'
-    },
-    '/articles/:id': {
-      templateUrl: 'views/article.html',
-      controller: 'ArticleController',
-      controllerAs: 'article',
-      reloadOnSearch: true
-    },
     '/admin/articles/:id': {
       templateUrl: 'views/admin/article.html',
       controller: 'EditorController',
@@ -50,7 +31,7 @@ define(function () {
       controller: 'LandingCtrl'
     },
     '/admin/system': {
-      templateUrl: 'views/admin/system.html'
+      templateUrl: 'views/admin/user.html'
     }
   }
 });

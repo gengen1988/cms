@@ -1,0 +1,25 @@
+<div ng-controller="UserController" class="container">
+  <div>
+    <h1>新用户注册</h1>
+    <p>在这里登记个人信息，我们将会为您创建一个账户。</p>
+  </div>
+  <form class="form">
+    <div class="form-group">
+      <label>用户名</label>
+      <input ng-model="credentials.username" placeholder="用户名用于登录，不要自找麻烦使用中文" class="form-control"></input>
+    </div>
+    <div class="form-group">
+      <label>昵称</label>
+      <input ng-model="credentials.nickname" placeholder="昵称用于显示，如果不设置，默认与用户名相同" class="form-control"></input>
+    </div>
+    <div class="form-group">
+      <label>邮箱</label>
+      <input ng-model="credentials.email" placeholder="之后我们会发送确认邮件" class="form-control"></input>
+    </div>
+    <div class="form-group">
+      <label>密码</label>
+      <input ng-model="credentials.password" type="password" placeholder="请混合大小写，数字，且不得低于 6 位" class="form-control"></input>
+    </div>
+    <button ng-click="signUp()" class="form-control btn btn-primary">注册</button>
+  </form>
+</div>
