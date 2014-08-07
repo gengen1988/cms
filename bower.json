@@ -14,15 +14,15 @@
     "tests"
   ],
   "dependencies": {
+    "angular-resource": "~1.2.21",
     "angular-route": "~1.2.21",
     "angular-sanitize": "~1.2.21",
+    "angular-ui-bootstrap-bower": "~0.11.0",
     "angular-ui-tinymce": "~0.0.5",
     "bootstrap": "~3.2.0",
-    "angular": "~1.2.21",
     "fontawesome": "~4.1.0",
-    "jquery": "1",
-    "requirejs": "~2.1.14",
     "less": "~1.7.4",
-    "tinymce": "~4.1.2"
+    "requirejs": "~2.1.14",
+    "tinymce": "~4.1.3"
   }
 }

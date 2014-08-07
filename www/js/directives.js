@@ -3,19 +3,21 @@ define([
 ], function (angular) {
   var directives = angular.module('app.directives', []);
 
-  directives.directive('appPagination', function () {
-    return {
-      restrict: 'E',
-      templateUrl: 'partials/pagination.html',
-      controller: 'PaginationController',
-      controllerAs: 'pagination'
-    }
-  });
-
   directives.directive('appHeader', function () {
     return {
       restrict: 'E',
       templateUrl: 'partials/header.html',
+    };
+  });
+
+  directives.directive('appSection', function () {
+    return {
+      restrict: 'E',
+      scope: {
+        sectionId: '=info'
+      },
+      templateUrl: 'partials/section.html',
+      controller: 'PartialSectionCtrl'
     };
   });
 

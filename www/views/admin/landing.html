@@ -1,0 +1,28 @@
+<admin-header></admin-header>
+
+<div class="container">
+  <div>
+    <h1>首页编辑器</h1>
+    <p>这个工具用于配置首页显示的栏目，请填写相应栏目的 id。</p>
+  </div>
+
+  <form class="form">
+    <div class="form-group">
+      <label>栏目1</label>
+      <input ng-model="section1" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>栏目2</label>
+      <input ng-model="section2" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>栏目3</label>
+      <input ng-model="section3" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <input ng-click="save()" value="保存" type="submit" class="form-control btn btn-primary" />
+    </div>
+
+  </form>
+</div>

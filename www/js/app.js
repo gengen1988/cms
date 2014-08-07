@@ -1,11 +1,11 @@
 define([
   'lib/js/etframework',
-  './controllers',
+  './view-controllers/index',
   './directives'
-], function (etframework) {
+], function (etframework, controllers) {
   return angular.module('app', [
-    'etframework',
-    'app.controllers',
+    etframework.name,
+    controllers.name,
     'app.directives'
   ]);
 });

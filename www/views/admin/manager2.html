@@ -1,0 +1,49 @@
+<admin-header></admin-header>
+
+<div class="container">
+
+  <div>
+    <h1>栏目文章管理</h1>
+    <p>在这里添加或删除栏目中的文章，点击文章可以编辑。</p>
+  </div>
+
+  <form class="form">
+    <div class="form-group">
+      <label>栏目标题</label>
+      <div class="input-group">
+        <input class="form-control" ng-model="manager2.name" />
+        <span class="input-group-btn">
+          <button ng-click="manager2.save()" class="btn btn-default">保存</button>
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>文章标题</th>
+        <th>更新日期</tn>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in manager2.items">
+        <td>
+          <a ng-href="admin/articles/{{item.id}}">
+            {{item.name}}
+          </a>
+        </td>
+        <td>
+          {{item.timestamp | date: 'yyyy-MM-dd'}}
+        </td>
+        <td>
+          <button ng-click="manager2.remove(item.id)" class="btn btn-danger">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="form-control btn btn-primary" ng-click="manager2.add()">新建文章</button>
+  <!-- <pagination total-items="manager2.totalCount"  ng-model="manager2.currentPage"></pagination> -->
+</div>

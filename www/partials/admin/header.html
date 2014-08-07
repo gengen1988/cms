@@ -1,7 +1,19 @@
 <div class="navbar navbar-inverse navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href=".">系统管理</a>
+      <a class="navbar-brand" ng-href="admin">后台管理</a>
     </div>
+
+    <ul class="nav navbar-nav">
+      <li ng-class="{active:isActive('/admin/landing')}"><a ng-href="admin/landing">首页管理</a></li>
+      <li><a ng-href="admin/navigations">导航管理</a></li>
+      <li><a ng-href="admin/sections">文章管理</a></li>
+      <li><a ng-href="admin/system">系统管理</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ng-href=".">返回首页</a></li>
+    </ul>
+
   </div>
 </div>

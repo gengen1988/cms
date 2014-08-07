@@ -2,16 +2,25 @@
 
 <div class="container">
 
-  <div class="form-group">
-    <label>标题</label>
-    <input ng-model="editor.name" class="form-control">
+  <div>
+    <h1>文章编辑器</h1>
+    <p>在这里编辑文章，文章中可以插入图片。</p>
   </div>
 
-  <div class="form-group">
-    <label>正文</label>
-    <textarea ui-tinymce="editor.options" ng-model="editor.html"></textarea>
-  </div>
+  <form class="form">
 
-  <button ng-click="editor.save()" class="btn btn-primary">保存</button>
+    <div class="form-group">
+      <label>标题</label>
+      <input ng-model="editor.name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>正文</label>
+      <textarea ui-tinymce="editor.options" ng-model="editor.html"></textarea>
+    </div>
+
+    <button ng-click="editor.save()" class="form-control btn btn-primary">保存</button>
+
+  </form>
 
 </div>

@@ -1,0 +1,31 @@
+<admin-header></admin-header>
+
+<div class="container">
+  <div>
+    <h1>导航编辑</h1>
+    <p>这个工具用于添加和删除导航栏上的按钮。如果需要编辑导航的项目，请点击相应的列表。</p>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in navs">
+        <td>
+          <a ng-href="admin/navigations/{{item.id}}">
+            {{item.name}}
+          </a>
+        </td>
+        <td>
+          <button ng-click="remove(item.id)" class="btn btn-danger">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button ng-click="add()" class="form-control btn btn-primary">新增</button>
+</div>

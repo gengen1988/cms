@@ -1,14 +1,14 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    {{title}}asdfas
-    <a href="products" class="pull-right">更多</a>
+    <span>{{name}}</span>
+    <a ng-href="sections/{{sectionId}}" class="pull-right">更多</a>
     <div class="clearfix"></div>
   </div>
   <div class="panel-body">
     <ul>
-      <li><a href="article/123">1a</a></li>
-      <li><a href="article/123">1a</a></li>
-      <li><a href="article/123">1a</a></li>
+      <li ng-repeat="item in articles">
+        <a ng-href="articles/{{item.id}}">{{item.name}}</a>
+      </li>
     </ul>
   </div>
 </div>

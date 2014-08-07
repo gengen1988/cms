@@ -2,34 +2,39 @@
 
 <div class="container">
 
-  <ol class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Library</a></li>
-    <li class="active">Data</li>
-  </ol>
-
-  <div class="panel panel-default">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>名称</th>
-          <th>修改时间</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="item in manager.items">
-          <td>
-            <span class="fa" ng-class="{
-              'fa-folder': item.type === 'folder',
-              'fa-file-text-o': item.type === 'file',
-              'fa-file-o': item.type === 'page'
-            }"></span>
-            <span class="name">{{item.name}}</span>
-          </td>
-          <td>{{'asdf'}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div>
+    <h1>全部栏目</h1>
+    <p>在这里查看全部的栏目，点击栏目可以编辑其中的文章。</p>
   </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>修改时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in manager.items">
+        <td>
+          <a ng-href="admin/sections/{{item.id}}/articles">
+            <span class="fa fa-file"></span>
+            <span class="name">{{item.name}}</span>
+          </a>
+        </td>
+        <td>{{item.timestamp | date: 'yyyy-MM-dd'}}</td>
+        <td>
+          <button ng-click="manager.remove(item.id, $event)" class="btn btn-danger">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button ng-click="manager.add()" class="form-control btn btn-primary">新增</button>
+
+
+
+  <!-- <pagination total-items="manager.totalItems" ng-model="manager.currentPage" ng-change="manager.load(manager.currentPage)"></pagination> -->
 
 </div>

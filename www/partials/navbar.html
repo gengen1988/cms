@@ -1,10 +1,10 @@
 <div class="container">
-  <nav class="navbar navbar-default">
+  <nav ng-controller="NavCtrl" class="navbar navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
-        <li><a href=".">网站首页</a></li>
-        <li><a href="article/123">公司介绍</a></li>
-        <li><a href="sections/1">新闻中心</a></li>
+        <li ng-repeat="item in navs">
+          <a ng-href="{{item.link}}">{{item.name}}</a>
+        </li>
       </ul>
 
       <form class="navbar-form navbar-right">
