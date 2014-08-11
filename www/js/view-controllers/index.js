@@ -15,6 +15,7 @@ define([
   './admin/UserAdminController',
 
   './user/UserController',
+  './user/ProfileController',
 
   './PartialSectionController'
 

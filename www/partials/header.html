@@ -5,10 +5,12 @@
     </a>
   </div>
   <div class="user-control pull-right">
-    <button ng-show="hasLogin" ng-click="signOut()" class="btn btn-default">signout</button>
-    <a href="user">profile</a>
-    <a href="user/signup">signup</a>
-    <a href="user/signin">signin</a>
-    <a href="admin">admin</a>
+    <span ng-show="hasLogin">
+      欢迎您，
+      <a ng-href="/user">{{nickname}}</a>
+      <button ng-click="signOut()" class="btn btn-default">登出</button>
+    </span>
+    <a ng-hide="hasLogin" href="user/signin">登录</a>
+    <a ng-show="isAdmin" href="admin">系统管理</a>
   </div>
 </div>

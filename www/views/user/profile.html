@@ -1,1 +1,10 @@
-profile
+<div ng-controller="ProfileController" class="container">
+  <div>
+    <h1>用户中心</h1>
+    <p>在这里管理个人信息。</p>
+    <form>
+      <input type="file" onchange="angular.element(this).scope().change(files[0])" />
+    </form>
+    <img ng-src="{{avatar}}"></img>
+  </div>
+</div>
