@@ -1,0 +1,14 @@
+<a ng-href=".">回首页</a>
+<div class"container">
+  <div ng-controller="ACtrl" class="panel panel-primary">
+    <div class="panel-heading">{{heading}}</div>
+    <div class="panel-body">
+      <ul>
+        <li ng-repeat="item in bbb">
+          {{item.name}}
+          <a ng-click="remove(item)">删除</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

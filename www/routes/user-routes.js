@@ -8,6 +8,9 @@ define([], function () {
     },
     '/user/signup': {
       templateUrl: 'views/user/signup.html'
+    },
+    '/user/aaaa': {
+      templateUrl: 'views/user/aaaa.html'
     }
   }
 });
