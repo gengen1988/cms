@@ -8,6 +8,17 @@
 </head>
 <body>
   <div ng-view></div>
+
+  <iframe id="form_target" name="form_target" style="display:none"></iframe>
+  <form id="my_form"
+    action="/storage/upload"
+    target="form_target"
+    method="POST"
+    enctype="multipart/form-data"
+    style="width:0px;height:0;overflow:hidden">
+    <input name="image" type="file" onchange="$('#my_form').submit();">
+  </form>
+
   <script src="bower_components/less/dist/less-1.7.4.js"></script>
   <script src="bower_components/requirejs/require.js" data-main="lib/js/main"></script>
 </body>

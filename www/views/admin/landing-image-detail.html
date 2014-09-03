@@ -1,0 +1,36 @@
+<admin-header></admin-header>
+
+<div class="container">
+  <div>
+    <h1>首页图片项目编辑</h1>
+    <p>这个工具用于编辑首页图片。</p>
+  </div>
+
+  <form class="form">
+    <div class="form-group">
+      <label class="form-label">标题</label>
+      <input ng-model="name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">链接地址</label>
+      <input ng-model="link" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">图片地址</label>
+      <input ng-model="link" type="file" class="form-control" />
+    </div>
+
+    <div>
+      <img ng-src="/storage/umls.png">
+    </div>
+
+    <div class="btn-group pull-right">
+      <button ng-click="" class="btn btn-default" />返回</button>
+      <button ng-click="save()" class="btn btn-primary" />保存</button>
+    </div>
+
+
+  </form>
+</div>

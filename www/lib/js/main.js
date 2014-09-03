@@ -13,7 +13,7 @@ require.config({
     'lbServices': 'services/lb-services'
   },
   shim: {
-    'angular': {exports: 'angular'},
+    'angular': {exports: 'angular', deps: ['jquery']},
     'tinymce': {exports: 'tinymce'},
     'bootstrap': ['jquery'],
     'ngRoute': ['angular'],

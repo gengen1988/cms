@@ -13,6 +13,7 @@ define([
   './admin/NavigationAdminController',
   './admin/NavAdminDetailCtrl',
   './admin/UserAdminController',
+  './admin/LandingImage',
 
   './user/UserController',
   './user/ProfileController',

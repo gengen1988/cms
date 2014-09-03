@@ -19,7 +19,19 @@ define([
       plugins: 'code image preview autoresize',
       menubar: false,
       statusbar: false,
-      toolbar: 'undo redo | code preview | bold italic underline | alignleft aligncenter alignright | image'
+      toolbar: 'undo redo | code preview | bold italic underline | alignleft aligncenter alignright | image',
+      file_picker_callback: function (callback, value, meta) {
+        if (meta.filetype == 'image') {
+          var input = angular.element('#my_form input');
+          input.click();
+          input.on('change', function onchange() {
+            var filename = '/storage/' + input.val().replace(/C:\\fakepath\\/i, '');
+            console.log(filename);
+            callback(filename);
+            input.unbind('change', onchange);
+          });
+        }
+      }
     };
 
     this.save = function () {

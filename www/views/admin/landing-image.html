@@ -1,0 +1,31 @@
+<admin-header></admin-header>
+
+<div ng-controller="LandingImage" class="container" ng-init="breakingNews = []">
+  <div>
+    <h1>首页图片编辑</h1>
+    <p>这个工具用于修改首页中的图片新闻。</p>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in breakingNews">
+        <td>
+          <a ng-href="admin/landing-image/{{item.id}}">
+            {{item.name}}
+          </a>
+        </td>
+        <td>
+          <button ng-click="remove($index)" class="btn btn-danger">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button ng-click="add()" class="form-control btn btn-primary">新增</button>
+</div>

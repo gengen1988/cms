@@ -32,6 +32,13 @@ define([], function () {
     },
     '/admin/system': {
       templateUrl: 'views/admin/user.html'
+    },
+    '/admin/landing-image': {
+      templateUrl: 'views/admin/landing-image.html'
+    },
+
+    '/admin/landing-image/:id': {
+      templateUrl: 'views/admin/landing-image-detail.html'
     }
   }
 });
